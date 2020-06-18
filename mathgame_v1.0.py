@@ -37,12 +37,12 @@ def game():
         print('>'*8, '\n')
         if ask_question() == True:
             score += 1
-            print('Correct!\n\n')
-            time.sleep(delay)
+            print('\u001b[32mCorrect!\n\n')
+            #time.sleep(delay)
         else:
-            print('Incorrect\n')
+            print('\u001b[31mIncorrect\n')
             print(times)
-            time.sleep(delay)
+            #time.sleep(delay)
     print('#'*16)
     print (f'your score is:\n', score, '/', times+1)
     print('#'*16)
