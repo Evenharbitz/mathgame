@@ -1,5 +1,9 @@
 import random
 import operator
+import time
+
+delay = 0.5
+rounds = 10
 
 def random_problem():
     operators = {
@@ -13,26 +17,33 @@ def random_problem():
     num_2 = random.randint(1, 10)
     operation = random.choice(list(operators.keys()))
     answer = operators.get(operation)(num_1, num_2)
-    print ('what is:', num_1, operation, num_2,'?')
+    print (f'what is:', num_1, operation, num_2,'?\n')
     return answer
 
 
 def ask_question():
-    aanswer = random_problem()
+    answer = random_problem()
     guess = float(input())
+    print('\n\n')
     return guess == answer
 
 
 def game():
-    print('Mathgame\t By: Even')
+    print('\n\nMathgame\n+By: Even')
     print(''*4)
     score = 0
-    for i in range(10):
+    for times in range(rounds):
+        print('round:', score+1,)
+        print('>'*8, '\n')
         if ask_question() == True:
             score += 1
-            print('correct!\n')
+            print('Correct!\n\n')
+            time.sleep(delay)
         else:
-           print('Incorrect\n')
-    print ('your score is:\n', {score} )
-
+            print('Incorrect\n')
+            print(times)
+            time.sleep(delay)
+    print('#'*16)
+    print (f'your score is:\n', score, '/', times+1)
+    print('#'*16)
 game()
