@@ -17,7 +17,7 @@ def random_problem():
     return answer
 
 
-def ask_question
+def ask_question():
 
 
 
