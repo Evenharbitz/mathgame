@@ -18,6 +18,21 @@ def random_problem():
 
 
 def ask_question():
+    aanswer = random_problem()
+    guess = float(input())
+    return guess == answer
 
 
+def game():
+    print('Mathgame\t By: Even')
+    print(''*4)
+    score = 0
+    for i in range(10):
+        if ask_question() == True:
+            score += 1
+            print('correct!\n')
+        else:
+           print('Incorrect\n')
+    print ('your score is:\n', {score} )
 
+game()
